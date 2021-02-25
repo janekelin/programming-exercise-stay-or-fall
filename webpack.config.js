@@ -1,17 +1,19 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ShebangPlugin = require('webpack-shebang-plugin');
 
 const dist = path.resolve(__dirname, 'dist');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/bin/index.js',
   output: {
-    filename: 'app.js',
+    filename: 'bin/index.js',
     path: dist,
   },
   plugins: [
     // Clean /build folder
     new CleanWebpackPlugin(),
+    new ShebangPlugin(),
   ],
   module: {
     rules: [
