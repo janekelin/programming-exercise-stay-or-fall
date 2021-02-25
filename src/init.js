@@ -1,7 +1,11 @@
 // @ts-check
 
-import interfaceBuilder from './builders/interfaceBuilder';
+const interfaceBuilder = require('./builders/interfaceBuilder');
 
+/**
+ * @module init
+ * @desc Controls application's flow.
+ */
 function init() {
   const appInterface = interfaceBuilder.from('readline');
   appInterface.inform('welcome');
@@ -11,4 +15,4 @@ function init() {
   appInterface.inform('result');
 }
 
-export default init;
+module.exports = init;

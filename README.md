@@ -4,13 +4,13 @@ The task is to accept a set of commands and then simulate whether an object can 
 
 # Quick start
 
-## If you have NodeJs installed
+## If you have NodeJs v14+ installed
 
 Run CLI command `npm run dist` from the repo's root.
 
 ## If you do not have NodeJs installed
 
-At the moment this application is distributed only as a command line based program. In order to run it, you must install [NodeJs](https://nodejs.org/en/).
+At the moment this application is distributed only as a command line based program. In order to run it, you must install [NodeJs, LTS v14+](https://nodejs.org/en/).
 After that, you can run CLI command `npm run dist` from the repo's root.
 
 # Assumptions
