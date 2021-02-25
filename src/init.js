@@ -4,6 +4,11 @@ const interfaceBuilder = require('./builders/interfaceBuilder');
 const { guard } = require('./factories/guardFactory');
 const MESSAGES = require('./utils/constants');
 const state = require('./state');
+const {
+  parseTableSize,
+  parseStartPosition,
+  parseCommands,
+} = require('./utils/parsers');
 
 /**
  * @module init
@@ -29,9 +34,9 @@ function init() {
   );
 
   state.save({
-    tableSize,
-    startPosition,
-    commands,
+    tableSize: parseTableSize(tableSize),
+    startPosition: parseStartPosition(startPosition),
+    commands: parseCommands(commands),
   });
 
   appInterface.inform(MESSAGES.RESULT);
