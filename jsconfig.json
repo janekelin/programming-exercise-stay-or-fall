@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "checkJs": true,
+    "lib": ["es2020"],
+    "maxNodeModuleJsDepth": 0,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "target": "es2020",
+    "types": ["node", "jest"]
+  },
+  "include": ["src/**/*", "node_modules/@types/**/*"]
+}
