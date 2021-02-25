@@ -2,15 +2,25 @@
 
 const readlineSync = require('readline-sync');
 
-function readlineConnector() {
-  return {
-    inform: str => {
-      console.log(str);
-    },
-    prompt: str => {
-      readlineSync.question(str);
-    },
-  };
-}
+/**
+ * @module readlineConnector
+ * @name inform
+ * @desc Outputs a message to the user
+ * @param {string} message Data for output
+ */
+const inform = message => {
+  console.log(message);
+};
 
-export default { readlineConnector };
+/**
+ * @module readlineConnector
+ * @name prompt
+ * @desc Receives a message from the user
+ * @param {string} message Prompt for input
+ * @return {string} Input data
+ */
+const prompt = message => {
+  return readlineSync.question(message);
+};
+
+module.exports = { inform, prompt };

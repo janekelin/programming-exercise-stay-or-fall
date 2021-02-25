@@ -4,6 +4,7 @@ const interfaceBuilder = require('./builders/interfaceBuilder');
 
 /**
  * @module init
+ * @name init
  * @desc Controls application's flow.
  */
 function init() {

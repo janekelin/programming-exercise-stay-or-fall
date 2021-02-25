@@ -7,11 +7,12 @@ const readlineConnector = require('../connectors/readlineConnector');
 
 /** @type InterfaceProvidersType */
 const interfaceProviders = {
-  readline: readlineConnector(),
+  readline: readlineConnector,
 };
 
 /**
  * @module interfaceBuilder
+ * @name interfaceBuilder
  * @desc Creates application's interface
  * @param {string} provider - Name of utility providing application's interface
  * @returns {InterfaceType} Object with interface functionality.
