@@ -1,3 +1,7 @@
+// @ts-check
+
+const { Point } = require('../components/Point');
+
 const MESSAGES = {
   WELCOME: `
     Warmly welcome to the Stay-or-fall game!
@@ -38,4 +42,16 @@ Here are your results:
 `,
 };
 
-module.exports = { ...MESSAGES };
+const DEFAULT_VALUES = {
+  DEFAULT_STATE: {
+    tableSize: {
+      width: 3,
+      height: 3,
+    },
+    startPosition: Point(0, 0),
+    commands: [],
+    result: Point(0, 0),
+  },
+};
+
+module.exports = { ...MESSAGES, ...DEFAULT_VALUES };

@@ -1,5 +1,7 @@
 // @ts-check
 
+/** @ignore @typedef { import('../@types/globals.d').ValidationOptionType} ValidationOptionType */
+
 const readlineSync = require('readline-sync');
 
 /**
@@ -17,10 +19,11 @@ const inform = message => {
  * @name prompt
  * @desc Receives a message from the user
  * @param {string} message Prompt for input
+ * @param {ValidationOptionType} validation Customization of input's validation
  * @return {string} Input data
  */
-const prompt = message => {
-  return readlineSync.question(message);
+const prompt = (message, validation) => {
+  return readlineSync.question(message, validation);
 };
 
 module.exports = { inform, prompt };

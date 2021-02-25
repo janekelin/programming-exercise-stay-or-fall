@@ -1,7 +1,9 @@
 // @ts-check
 
 const interfaceBuilder = require('./builders/interfaceBuilder');
+const { guard } = require('./factories/guardFactory');
 const MESSAGES = require('./utils/constants');
+const state = require('./state');
 
 /**
  * @module init
@@ -10,10 +12,28 @@ const MESSAGES = require('./utils/constants');
  */
 function init() {
   const appInterface = interfaceBuilder.from('readline');
+
   appInterface.inform(MESSAGES.WELCOME);
-  appInterface.prompt(MESSAGES.PROMPT_TABLE_SIZE);
-  appInterface.prompt(MESSAGES.PROMPT_START_POSITION);
-  appInterface.prompt(MESSAGES.PROMPT_COMMANDS);
+
+  const tableSize = appInterface.prompt(
+    MESSAGES.PROMPT_TABLE_SIZE,
+    guard('tableSize')
+  );
+  const startPosition = appInterface.prompt(
+    MESSAGES.PROMPT_START_POSITION,
+    guard('startPosition')
+  );
+  const commands = appInterface.prompt(
+    MESSAGES.PROMPT_COMMANDS,
+    guard('commands')
+  );
+
+  state.save({
+    tableSize,
+    startPosition,
+    commands,
+  });
+
   appInterface.inform(MESSAGES.RESULT);
 }
 
