@@ -12,7 +12,9 @@ const state = require('./state');
  */
 function init() {
   const appInterface = interfaceBuilder.from('readline');
+
   appInterface.inform(MESSAGES.WELCOME);
+
   const tableSize = appInterface.prompt(
     MESSAGES.PROMPT_TABLE_SIZE,
     guard('tableSize')
@@ -25,11 +27,13 @@ function init() {
     MESSAGES.PROMPT_COMMANDS,
     guard('commands')
   );
+
   state.save({
     tableSize,
     startPosition,
     commands,
   });
+
   appInterface.inform(MESSAGES.RESULT);
 }
 
