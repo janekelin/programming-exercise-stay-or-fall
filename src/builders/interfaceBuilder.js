@@ -18,13 +18,13 @@ const interfaceProviders = {
  * @returns {InterfaceType} Object with interface functionality.
  * @throws If the interface is to be built from an unsupported provider
  */
-function interfaceBuilder(provider) {
+const interfaceBuilder = provider => {
   if (!Object.prototype.hasOwnProperty.call(interfaceProviders, provider)) {
     throw new Error(
-      `The application has failed to load. Interface provider is not supported.`
+      `The application has failed to load. Interface provider ${provider} is not supported.`
     );
   }
   return interfaceProviders[provider];
-}
+};
 
 module.exports = { from: interfaceBuilder };
