@@ -1,6 +1,7 @@
 // @ts-check
 
 const interfaceBuilder = require('./builders/interfaceBuilder');
+const MESSAGES = require('./utils/constants');
 
 /**
  * @module init
@@ -9,11 +10,11 @@ const interfaceBuilder = require('./builders/interfaceBuilder');
  */
 function init() {
   const appInterface = interfaceBuilder.from('readline');
-  appInterface.inform('welcome');
-  appInterface.prompt('tableSize');
-  appInterface.prompt('startPosition');
-  appInterface.prompt('commands');
-  appInterface.inform('result');
+  appInterface.inform(MESSAGES.WELCOME);
+  appInterface.prompt(MESSAGES.PROMPT_TABLE_SIZE);
+  appInterface.prompt(MESSAGES.PROMPT_START_POSITION);
+  appInterface.prompt(MESSAGES.PROMPT_COMMANDS);
+  appInterface.inform(MESSAGES.RESULT);
 }
 
 module.exports = init;
