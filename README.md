@@ -31,4 +31,4 @@ Based on these requirements, it is assumed that they are incorrect, because:
 Based on this assumption, the following steps were taken:
 
 - development to be done with server-side JavaScript
-- `readline` Node module to be used as an interface for managing `stdin/stdout` related actions
+- `readlineSync` Node package to be used as an interface for managing `stdin/stdout` related actions
