@@ -3,18 +3,7 @@
 /** @ignore @typedef { import('../@types/globals.d').InterfaceType} InterfaceType */
 /** @ignore @typedef { import('../@types/globals.d').InterfaceProvidersType} InterfaceProvidersType */
 
-const readlineSync = require('readline-sync');
-
-function readlineConnector() {
-  return {
-    inform: str => {
-      console.log(str);
-    },
-    prompt: str => {
-      readlineSync.question(str);
-    },
-  };
-}
+const readlineConnector = require('../connectors/readlineConnector');
 
 /** @type InterfaceProvidersType */
 const interfaceProviders = {
