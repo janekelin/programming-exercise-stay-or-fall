@@ -40,6 +40,14 @@ NB! You start by facing north.
   RESULT: `
 Here are your results:
 `,
+  LOST: `
+You fell of a table and lost. Good luck next time!
+[-1;-1]
+`,
+  WON: `
+You won! Your final position is:
+
+`,
 };
 
 const DEFAULT_VALUES = {
@@ -48,9 +56,12 @@ const DEFAULT_VALUES = {
       width: 3,
       height: 3,
     },
+    // @ts-ignore
     startPosition: Point(0, 0),
     commands: [],
-    result: Point(0, 0),
+    // @ts-ignore
+    endPosition: Point(0, 0),
+    facing: 'whenFacingNorth',
   },
 };
 

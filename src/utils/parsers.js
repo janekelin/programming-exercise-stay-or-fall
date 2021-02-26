@@ -15,8 +15,8 @@ const { Point } = require('../components/Point');
 exports.parseTableSize = input => {
   const values = input.split(',');
   return {
-    width: +values[0],
-    height: +values[1],
+    width: +values[0] - 1,
+    height: +values[1] - 1,
   };
 };
 
@@ -29,6 +29,7 @@ exports.parseTableSize = input => {
  */
 exports.parseStartPosition = input => {
   const values = input.split(',');
+  // @ts-ignore
   return Point(+values[0], +values[1]);
 };
 

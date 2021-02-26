@@ -29,7 +29,8 @@ export type StateType = {
   tableSize: TableSizeType;
   startPosition: PointType;
   commands: number[] | never[];
-  result: PointType;
+  endPosition: PointType;
+  facing: string;
 };
 
 export type StateUpdateType = Partial<StateType>;

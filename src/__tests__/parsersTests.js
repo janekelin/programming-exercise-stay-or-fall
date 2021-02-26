@@ -13,8 +13,8 @@ describe('parsers', () => {
     // Act
     const result = parseTableSize(input);
     const expected = {
-      width: 4,
-      height: 2,
+      width: 3,
+      height: 1,
     };
     // Assert
     expect(result).toStrictEqual(expected);
