@@ -20,14 +20,17 @@ export type PointType = {
   y: number;
 };
 
+export type TableSizeType = {
+  width: number;
+  height: number;
+};
+
 export type StateType = {
-  tableSize: {
-    width: number;
-    height: number;
-  };
+  tableSize: TableSizeType;
   startPosition: PointType;
   commands: number[] | never[];
-  result: PointType;
+  endPosition: PointType;
+  facing: string;
 };
 
 export type StateUpdateType = Partial<StateType>;

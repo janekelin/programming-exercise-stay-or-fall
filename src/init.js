@@ -4,6 +4,11 @@ const interfaceBuilder = require('./builders/interfaceBuilder');
 const { guard } = require('./factories/guardFactory');
 const MESSAGES = require('./utils/constants');
 const state = require('./state');
+const {
+  parseTableSize,
+  parseStartPosition,
+  parseCommands,
+} = require('./utils/parsers');
 
 /**
  * @module init
@@ -29,12 +34,20 @@ function init() {
   );
 
   state.save({
-    tableSize,
-    startPosition,
-    commands,
+    tableSize: parseTableSize(tableSize),
+    startPosition: parseStartPosition(startPosition),
+    commands: parseCommands(commands),
+    endPosition: parseStartPosition(startPosition),
   });
 
   appInterface.inform(MESSAGES.RESULT);
+  const result = state.getResult();
+  if (state.isGameOver()) {
+    appInterface.inform(MESSAGES.LOST);
+  } else {
+    appInterface.inform(MESSAGES.WON);
+    appInterface.inform(`[${result.x},${result.y}]`);
+  }
 }
 
 module.exports = init;
